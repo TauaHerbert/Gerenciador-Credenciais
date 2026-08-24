@@ -1,0 +1,282 @@
+/* PALETA DE CORES E VARIÁVEIS */
+:root {
+    --bg-page: #f5f7fa;    
+    --card-bg: #ffffff;         
+    --primary: #004a8c;          
+    --primary-hover: #003666;    
+    --text-title: #0f2647;       
+    --text-body: #4a5568;       
+    --text-muted: #718096;       
+    --border-light: #edf2f7;     
+    
+    --btn-danger: #e53e3e;
+    --btn-danger-hover: #c53030;
+    --btn-secondary: #e2e8f0;   
+    --btn-secondary-text: #4a5568;
+    
+    --radius-md: 8px;       
+    --radius-lg: 16px;  
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+/* RESET E TIPOGRAFIA */
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0;
+    font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+}
+
+body { 
+    background-color: var(--bg-page); 
+    color: var(--text-body); 
+    padding: 30px 20px; 
+}
+
+.container { 
+    max-width: 950px; 
+    margin: 0 auto; 
+}
+
+/* CABEÇALHO DA APLICAÇÃO */
+header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 25px; 
+}
+
+header h1 {
+    color: var(--text-title);
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+/* BOTÕES (Arredondados e com transição suave) */
+.btn { 
+    padding: 10px 18px; 
+    background: var(--primary); 
+    color: #fff; 
+    border: none; 
+    border-radius: var(--radius-md); 
+    cursor: pointer; 
+    text-decoration: none; 
+    display: inline-block;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn:hover { background: var(--primary-hover); }
+
+.btn-small { 
+    padding: 6px 12px; 
+    font-size: 13px; 
+}
+
+.btn-danger { background: var(--btn-danger); }
+.btn-danger:hover { background: var(--btn-danger-hover); }
+
+.btn-secondary { 
+    background: var(--btn-secondary); 
+    color: var(--btn-secondary-text); 
+}
+.btn-secondary:hover { 
+    background: #cbd5e0; 
+}
+
+/* ACORDEÕES / CARDS (Estilo LumiHub) */
+details { 
+    background: var(--card-bg); 
+    margin-bottom: 20px; 
+    border-radius: var(--radius-lg); 
+    border: none; /* Removida a borda dura */
+    padding: 20px 25px; 
+    box-shadow: var(--shadow-soft); 
+    transition: all 0.3s ease;
+}
+
+/* Um leve efeito ao passar o mouse sobre o card fechado */
+details:hover {
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.06);
+}
+
+summary { 
+    font-size: 18px; 
+    font-weight: 700; 
+    color: var(--text-title);
+    cursor: pointer; 
+    list-style: none; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+summary::-webkit-details-marker { display: none; }
+
+.dominio-desc { 
+    display: block; 
+    font-size: 14px; 
+    color: var(--text-muted); 
+    font-weight: 400; 
+    margin-top: 6px; 
+}
+
+/* TABELAS (Limpa, sem linhas verticais pesadas) */
+.credenciais-table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 25px; 
+    font-size: 14px; 
+}
+
+.credenciais-table th, 
+.credenciais-table td { 
+    padding: 12px 10px; 
+    text-align: left; 
+    border-bottom: 1px solid var(--border-light);
+}
+
+.credenciais-table th { 
+    color: var(--text-muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    border-bottom: 2px solid var(--border-light);
+}
+
+/* A senha visível ganha um destaque discreto */
+.credenciais-table td strong {
+    color: var(--text-title);
+    background-color: var(--bg-page);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 13px;
+}
+
+/* MODAIS Flutuantes */
+.modal-overlay { 
+    display: none; 
+    position: fixed; 
+    top: 0; left: 0; 
+    width: 100%; height: 100%; 
+    background: rgba(15, 38, 71, 0.4);
+    backdrop-filter: blur(3px); 
+    justify-content: center; 
+    align-items: center; 
+    z-index: 1000; 
+}
+
+.modal { 
+    background: var(--card-bg); 
+    padding: 30px; 
+    border-radius: var(--radius-lg); 
+    width: 450px; 
+    max-width: 90%; 
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.modal h3 { 
+    margin-bottom: 20px; 
+    color: var(--text-title);
+    font-size: 20px;
+}
+
+.form-group { margin-bottom: 18px; }
+
+.form-group label { 
+    display: block; 
+    margin-bottom: 8px; 
+    font-weight: 600;
+    color: var(--text-title);
+    font-size: 14px;
+}
+
+.form-group input { 
+    width: 100%; 
+    padding: 12px; 
+    border: 1px solid #cbd5e0; 
+    border-radius: var(--radius-md); 
+    font-size: 14px;
+    color: var(--text-body);
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(0, 74, 140, 0.1);
+}
+
+.modal-actions { 
+    display: flex; 
+    justify-content: flex-end; 
+    gap: 12px; 
+    margin-top: 25px; 
+}
+/* AJUSTES DA TABELA E BOTÕES OUTLINE (Credenciais) */
+.acoes-tabela {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.btn-outline-primary {
+    background: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+.btn-outline-primary:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+.btn-outline-secondary {
+    background: transparent;
+    color: var(--text-body);
+    border: 1px solid #cbd5e0;
+}
+.btn-outline-secondary:hover {
+    background: var(--btn-secondary);
+}
+
+.btn-outline-danger {
+    background: transparent;
+    color: var(--btn-danger);
+    border: 1px solid var(--btn-danger);
+}
+.btn-outline-danger:hover {
+    background: var(--btn-danger);
+    color: #fff;
+}
+
+/* BALÃO DE NOTIFICAÇÃO (TOAST) */
+.toast {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: var(--text-title);
+    color: #fff;
+    text-align: center;
+    border-radius: var(--radius-md);
+    padding: 12px 20px;
+    position: fixed;
+    z-index: 9999;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s, bottom 0.3s;
+}
+
+.toast.show {
+    visibility: visible;
+    opacity: 1;
+    bottom: 50px;
+}
